@@ -61,3 +61,14 @@ urllib3
 wcwidth
 webencodings
 widgetsnbextension
+Django
+django-allauth
+asgiref
+cffi
+cryptography
+mangorest
+oauthlib
+pycparser
+PyJWT
+python3-openid
+requests-oauthlib
