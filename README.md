@@ -1,3 +1,8 @@
 # Video_Sharing_Platform
-TOOL1_FINAL_PROJECT
+Data Science Tools 1 Final Project 
 
+## Intallation
+pip install -r requirements.txt
+
+## Run
+./run.sh
