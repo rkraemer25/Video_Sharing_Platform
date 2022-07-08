@@ -61,7 +61,7 @@ urllib3
 wcwidth
 webencodings
 widgetsnbextension
-Django
+django==3.2.3
 django-allauth
 asgiref
 cffi
@@ -72,3 +72,5 @@ pycparser
 PyJWT
 python3-openid
 requests-oauthlib
+django-proxy
+proxy
