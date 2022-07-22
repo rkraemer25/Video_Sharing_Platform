@@ -11,6 +11,7 @@ app_name = 'mainapp'
 urlpatterns = [
     path('app1/'     ,     include('app1.urls'),      name="First Application"),
     path('app2/'     ,     include('app2.urls'),      name="Second Application"),
+    path('Video_Player/'     ,     include('Video_Player.urls'),      name="Video Player"),
     
     
     url(r'^accounts/',  include('allauth.urls')),
