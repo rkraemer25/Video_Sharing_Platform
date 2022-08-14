@@ -1,6 +1,19 @@
 {% extends "common.html" %}
 {% block content %}
-
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    STYLE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<style>
+.centerpane {
+    width: 250px;
+    height: 95vh;
+    background: #fcfcfc;
+}
+</style>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    HTML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<id="centerPane" class="centerpane scroller ">
 <div class="center"
      style='font-family: "Google Sans",Arial,Helvetica,sans-serif; padding: 20px; margin: 20px;'>
 
@@ -77,6 +90,7 @@ The curriculum is going to be very hands-on as we walk you from start to finish 
 </tr>
 </table >
 
+<br/>
 <br/>
 {% include "footer.html" %}
 <script>

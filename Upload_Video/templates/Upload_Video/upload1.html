@@ -1,0 +1,116 @@
+{% extends "common.html" %}
+{% load i18n %}
+<title>Upload Video</title>
+{% block head_title %}{% trans "Upload Video" %} {% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="z-index: 3000;">
+
+
+<style>
+.fw1{
+    width: 100%;
+}
+.fc{
+    max-width: 800px;
+    background: #FaFaFa;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 2px 2px silver;
+}
+input{
+    width: 250px;
+    text-align: left;
+
+}
+</style>
+
+<!-- UPLOAD VIDEO FORM-->     
+    
+<!--<form class="container-fluid text-center fc" id="upload_video_form" method="POST" action="views.upload_video">-->
+<form class="container-fluid text-center fc" id="upload_form" action="#" method="post" onsubmit='upload()'>
+    {% csrf_token %}
+    <br>
+    <br>
+    <h3 class="h3" id="head_banner">{% trans "Upload Video" %}</h3>
+    <br>
+    <br>
+
+
+    <div class="form-box" data-errormsg="">
+        <label for="vname"> Video name: </label>
+        <input type="text" id="vname" name="vname" required>
+    </div>            
+    <br>
+    <div class="form-box" data-errormsg="">
+        <label for="vlink"> Video link: </label>
+        <input type="text" id="vlink" name="vlink" required>
+    </div>
+    <br>
+    <div class="form-box" data-errormsg="">
+        <label for="vtag"> Video tag: </label>
+        <select id="vtag" name="vtag" required>
+            <option value="0">Science</option>
+            <option value="1">Technology</option>
+            <option value="2">Engineering</option>
+            <option value="4">Math</option>
+            <option value="3">Art</option>
+            <option value="4">Music</option>
+            <option value="4">Entertainment</option>
+            <option value="4">Other</option>
+        </select>
+    </div>
+    <br>
+    <div class="form-box" data-errormsg="">
+        <button id="button-cancel" class="btn btn-primary" style="width:175px;">{% trans "Cancel" %}</button>
+        <button id="button-upload" class="btn btn-primary" style="width:175px;" type="submit">{% trans "Upload" %}</button>
+    </div>
+    <br>
+    <br>
+    <div class="form-box" data-errormsg="">
+        <p id="msg"> Pending Change </p>
+    </div>
+    <br>
+</form>
+    
+
+<!--     <span id=formContents></span>     -->
+    
+<!-- SCRIPT--> 
+<script>
+   
+function init(){
+    document.getElementById("button-cancel").addEventListener("click", reset);    
+    document.getElementById("button-upload").addEventListener("click", upload); 
+}
+    
+function reset(ev){
+    ev.preventDefault();
+    document.getElementByID('upload_form').reset();
+    document.getElementByID('msg').innerHTML = "RESET";
+}
+
+function upload(ev){
+    
+    document.getElementByID('msg').innerHTML = "RESET";
+    
+    ev.preventDefault();
+    ev.stopPropogation();
+    let ret = validate()
+    if(ret){
+        document.getElementByID('upload_form').submit();
+    }else{
+        let err = document.querySelector('.error');
+        let input = err.querySelector('input');
+        err.setAttribute('data-errormsg', `... Missing ${input.placeholder}`);
+    }
+} 
+
+document.addEventListener('DOMContentLoaded', init);
+    
+</script>
+    
+    
+{% include "footer.html" %}
+
+{% endblock %}

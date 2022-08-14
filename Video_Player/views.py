@@ -23,7 +23,7 @@ def page1(request):
 
 def getlist():
     urls_list = {"columns": [], "values": []}  
-    with open("./static/data/video_url_data.txt", 'r') as f:
+    with open("./static/data/sci_video_url_data.txt", 'r') as f:
         reader = csv.reader(f, delimiter=',', skipinitialspace=True)
         next(reader)
         for row in reader:
@@ -38,5 +38,8 @@ def getmenu(request, topic=None, **kwargs):
     
     # return HttpResponse( DEFAULT_LIST )
     return HttpResponse( default_list )
+
+
+
 
 

@@ -66,6 +66,7 @@ INSTALLED_APPS = [
     'app1',
     'app2',
     'Video_Player',
+    'Upload_Video',
  ];
 
 SITE_ID = 1
