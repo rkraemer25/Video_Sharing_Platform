@@ -1,7 +1,0 @@
-"video id", "video name", "image", "link", "tag"
-"id1", "Matrix Multip", "", "https://www.youtube.com/embed/LXKku-IbSak", "math"
-"id2", "Life goes on ", "", "https://www.youtube.com/embed/Hg7BGS7ap3I", "philosophy"
-"id3", "Mistake/Mystique", "", "https://www.youtube.com/embed/VQrhl7KJ0m4", "philosophy"
-"id4", "How to Catch an Unbroken Wave", "", "https://www.youtube.com/embed/k_Vd9SYg4wI", "surfing"
-"id5", "Bear Grylls Battles For Survival Against Spicy Wings | Hot Ones", "", "https://www.youtube.com/embed/2pnBCHN9EOE", "entertainment"
-"id6", "How to Create a Collapsible Navigation Menu - HTML, CSS & JavaScript Tutorial", "", "https://www.youtube.com/embed/LxEb9G7ELOQ", "coding"

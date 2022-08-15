@@ -56,11 +56,10 @@ button{
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <div id="workspace">
 <div id="leftPane" class="leftpane scroller ">
-    <H5 style="padding:10px;">Topic</H5>
     <table id="sort" style="width: 100%;">
     <tbody>
-         <a class="twitter-timeline" width="100%" height="100%" href="https://twitter.com/science?ref_src=twsrc%5Etfw">Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <H5 style="padding:10px;"> Related Videos </H5>
+         <a id='tweets' class="twitter-timeline" width="100%" height="100%" href="https://twitter.com/science?ref_src=twsrc%5Etfw">Tweets</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <H5 id='related_videos' style="padding:10px;"> Related Videos </H5>
         <tr><td><div class="bt"> Name </div>Apple</td><td></td><td></td></tr>
     </tbody>
     </table>
@@ -73,7 +72,7 @@ button{
         </div>
         <br>
         <div id="title" > 
-            <H5 style="padding:0px;"> Matrix Multip</H5>
+            <H5 style="padding:0px;"> Matrix Multiplication</H5>
         </div>
 
         <script src="https://use.fontawesome.com/fe459689b4.js"></script>
@@ -230,12 +229,14 @@ function sidebarCB(responseTxt, statusTxt, xhr){
     }
     var ret1 = JSON.parse(responseTxt);
     var ret  = ret1.values;
+    play(ret[0][0], ret[0][1], ret[0][3])
+    
     tbody= ''
     for (var i=0; i < ret.length; i++ ) {
         var r   = ret[i]
         var tr = `<tr onclick="play('${r[0]}', '${r[1]}', '${r[3]}')" >
 <td>&nbsp</td>
-<td>${r[1]} <br/>${r[0]} </td>
+<td>${r[1]}</td>
 <td><img src='${r[2]}'> </td> 
 </tr>`
         tbody += tr
@@ -244,7 +245,8 @@ function sidebarCB(responseTxt, statusTxt, xhr){
 }
 function sidebar(topic){
     topic = topic || ""
-    const URL1  = `/Video_Player/getmenu/?q={{topic}}`
+    document.getElementById('tweets').href = 'https://twitter.com/'+ topic +'?ref_src=twsrc%5Etfw'
+    const URL1  = '/Video_Player/getmenu/?q='+topic
     $.get(URL1, sidebarCB)
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,7 +256,7 @@ function play(id, name, url){
     title.innerHTML = `<H5 style="padding:0px;"> ${name} </H5>`;
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    
+
 $(function () {
     $("#workspace").splitter({
         orientation: "horizontal",

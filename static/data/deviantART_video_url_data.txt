@@ -1,0 +1,6 @@
+"video id", "video name", "image", "link"
+"M7eCgNYUvxc", "30 Simple Art Techniques Everyone Can Do", "", "https://www.youtube.com/embed/M7eCgNYUvxc"
+"eorGIZ0Y8RY", "I painted this in 1 hour vs 10 hours vs 100 hours", "", "https://www.youtube.com/embed/eorGIZ0Y8RY"
+"nkcg_cW4-fk", "How AI Art will SAVE Artists, not destroy us.", "", "https://www.youtube.com/embed/nkcg_cW4-fk"
+"jytmYCC5OtE", "The Beginner Guide To Getting Started With MidJourney (A.I. Art)", "", "https://www.youtube.com/embed/jytmYCC5OtE"
+"A5oS2QqlYjg", "ROASTING TIKTOK ART TUTORIALS", "", "https://www.youtube.com/embed/A5oS2QqlYjg"
