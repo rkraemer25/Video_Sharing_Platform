@@ -23,7 +23,7 @@ def page1(request):
 # }'''
 
 def getlist(topic="science"):
-    video_files = ["./static/data/sci_video_url_data.txt", "./static/data/tech_video_url_data.txt", "./static/data/engr_video_url_data.txt", "./static/data/math_video_url_data.txt", "./static/data/art_video_url_data.txt", "./static/data/music_video_url_data.txt", "./static/data/ent_video_url_data.txt", "./static/data/otr_video_url_data.txt"]
+#     video_files = ["./static/data/sci_video_url_data.txt", "./static/data/tech_video_url_data.txt", "./static/data/engr_video_url_data.txt", "./static/data/math_video_url_data.txt", "./static/data/art_video_url_data.txt", "./static/data/music_video_url_data.txt", "./static/data/ent_video_url_data.txt", "./static/data/otr_video_url_data.txt"]
     urls_list = {"columns": [], "values": []}  
     with open("./static/data/"+topic+"_video_url_data.txt", 'r') as f:
         reader = csv.reader(f, delimiter=',', skipinitialspace=True)
